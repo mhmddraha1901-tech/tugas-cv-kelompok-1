@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curriculum Vitae - Mermaid Edition</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --deep-ocean: #004e92;
+            --mermaid-tail: #00d2ff;
+            --soft-purple: #9d50bb;
+            --sea-foam: #e0f7fa;
+            --pearl: #ffffff;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, var(--deep-ocean), var(--soft-purple));
+            background-attachment: fixed;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        /* Container Utama */
+        .cv-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            width: 90%;
+            max-width: 800px;
+            margin: 40px 0;
+            padding: 40px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Dekorasi Kerang/Gelembung */
+        .cv-card::before {
+            content: '🐚';
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            font-size: 100px;
+            opacity: 0.1;
+            transform: rotate(20deg);
+        }
+
+        header {
+            text-align: center;
+            border-bottom: 2px dashed var(--mermaid-tail);
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: var(--deep-ocean);
+            margin: 0;
+        }
+
+        .subtitle {
+            color: var(--soft-purple);
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .section-title {
+            color: var(--deep-ocean);
+            display: flex;
+            align-items: center;
+            font-size: 1.2rem;
+            margin-top: 25px;
+        }
+
+        .section-title::before {
+            content: '✨';
+            margin-right: 10px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        li::before {
+            content: '💧';
+            position: absolute;
+            left: 0;
+            font-size: 0.8rem;
+        }
+
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill-badge {
+            background: linear-gradient(45deg, var(--mermaid-tail), var(--soft-purple));
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 0.8rem;
+            color: #666;
+        }
+
+        /* Animasi Mengapung */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .floating {
+            animation: float 4s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="cv-card floating">
+        <header>
+            <h1>Ariel Oceanita</h1>
+            <p class="subtitle">Creative UI Designer & Dreamer</p>
+        </header>
+
+        <section>
+            <h3 class="section-title">Tentang Saya</h3>
+            <p>Seorang desainer yang terinspirasi oleh keindahan bawah laut. Ahli dalam menciptakan antarmuka yang mengalir (fluid) dan pengalaman pengguna yang menenangkan seperti ombak tenang.</p>
+        </section>
+
+        <section>
+            <h3 class="section-title">Pengalaman Kerja</h3>
+            <ul>
+                <li><strong>Lead Designer</strong> di Atlantis Studio (2022 - Sekarang)</li>
+                <li><strong>Junior Illustrator</strong> di Coral Reef Agency (2020 - 2022)</li>
+            </ul>
+        </section>
+
+        <section>
+            <h3 class="section-title">Keahlian</h3>
+            <div class="skills-container">
+                <span class="skill-badge">Adobe XD</span>
+                <span class="skill-badge">Figma</span>
+                <span class="skill-badge">CSS Magic</span>
+                <span class="skill-badge">Storytelling</span>
+                <span class="skill-badge">Visual Art</span>
+            </div>
+        </section>
+
+        <section>
+            <h3 class="section-title">Kontak</h3>
+            <p>📧 hello@mermaid-waves.com<br>
+               📍 Underwater Kingdom, Coral Sector 7</p>
+        </section>
+
+        <footer>
+            Dibuat dengan ✨ dan deburan ombak
+        </footer>
+    </div>
+
+</body>
+</html>
