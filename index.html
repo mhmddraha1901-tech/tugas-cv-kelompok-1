@@ -3,181 +3,234 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Curriculum Vitae - Mermaid Edition</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    <title>CV Zhalika Fatharani</title>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --deep-ocean: #004e92;
-            --mermaid-tail: #00d2ff;
-            --soft-purple: #9d50bb;
-            --sea-foam: #e0f7fa;
-            --pearl: #ffffff;
+            --pastel-blue: #A2D2FF;
+            --pastel-pink: #FFC2D1;
+            --soft-white: #FBFAFF;
+            --text-dark: #5F5F5F;
+            --accent-pink: #FF8BA7;
         }
 
         body {
             margin: 0;
             padding: 0;
-            font-family: 'Poppins', sans-serif;
-            background: linear-gradient(135deg, var(--deep-ocean), var(--soft-purple));
+            font-family: 'Quicksand', sans-serif;
+            background: linear-gradient(135deg, var(--pastel-blue), var(--pastel-pink));
             background-attachment: fixed;
-            color: #333;
+            color: var(--text-dark);
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
         }
 
-        /* Container Utama */
-        .cv-card {
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
+        .container {
+            background-color: var(--soft-white);
             width: 90%;
             max-width: 800px;
-            margin: 40px 0;
-            padding: 40px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            position: relative;
+            margin: 50px auto;
+            border-radius: 30px;
             overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
         }
 
-        /* Dekorasi Kerang/Gelembung */
-        .cv-card::before {
-            content: '🐚';
-            position: absolute;
-            top: -20px;
-            right: -20px;
-            font-size: 100px;
-            opacity: 0.1;
-            transform: rotate(20deg);
-        }
-
+        /* Header Section */
         header {
+            background: linear-gradient(to right, #BDE0FE, #FFC2D1);
+            padding: 40px;
             text-align: center;
-            border-bottom: 2px dashed var(--mermaid-tail);
-            padding-bottom: 20px;
-            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 5px solid white;
+            object-fit: cover;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            background-color: #eee;
         }
 
         h1 {
             font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
-            color: var(--deep-ocean);
-            margin: 0;
+            margin: 15px 0 5px 0;
+            color: #4A4A4A;
+            font-size: 2.2rem;
         }
 
-        .subtitle {
-            color: var(--soft-purple);
+        .tagline {
             font-weight: 600;
-            letter-spacing: 2px;
+            color: var(--accent-pink);
+            letter-spacing: 1px;
             text-transform: uppercase;
+            font-size: 0.9rem;
         }
 
-        .section-title {
-            color: var(--deep-ocean);
-            display: flex;
-            align-items: center;
-            font-size: 1.2rem;
-            margin-top: 25px;
+        /* Content Layout */
+        .content {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 20px;
+            padding: 30px;
         }
 
-        .section-title::before {
-            content: '✨';
-            margin-right: 10px;
+        @media (max-width: 768px) {
+            .content { grid-template-columns: 1fr; }
         }
 
-        ul {
-            list-style-type: none;
+        .sidebar {
+            background-color: #F0F7FF;
+            padding: 20px;
+            border-radius: 20px;
+        }
+
+        .main-content {
+            padding: 10px;
+        }
+
+        h3 {
+            border-bottom: 2px solid var(--pastel-pink);
+            padding-bottom: 5px;
+            color: #4A4A4A;
+            margin-bottom: 15px;
+            display: inline-block;
+        }
+
+        .info-list {
+            list-style: none;
             padding: 0;
         }
 
-        li {
-            margin-bottom: 10px;
-            padding-left: 20px;
-            position: relative;
-        }
-
-        li::before {
-            content: '💧';
-            position: absolute;
-            left: 0;
-            font-size: 0.8rem;
-        }
-
-        .skills-container {
+        .info-list li {
+            margin-bottom: 12px;
+            font-size: 0.9rem;
             display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
+            align-items: center;
+        }
+
+        .info-list i {
+            margin-right: 10px;
+        }
+
+        /* Section Bubbles */
+        .bubble-item {
+            background: white;
+            padding: 15px;
+            border-radius: 15px;
+            margin-bottom: 15px;
+            border-left: 5px solid var(--pastel-blue);
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.02);
         }
 
         .skill-badge {
-            background: linear-gradient(45deg, var(--mermaid-tail), var(--soft-purple));
+            display: inline-block;
+            background: var(--pastel-blue);
             color: white;
             padding: 5px 15px;
             border-radius: 20px;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
+            margin-right: 5px;
+        }
+
+        .hobby-tag {
+            background: var(--pastel-pink);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.85rem;
         }
 
         footer {
             text-align: center;
-            margin-top: 40px;
+            padding: 20px;
             font-size: 0.8rem;
-            color: #666;
+            color: #AAA;
+            background: #f9f9f9;
         }
 
-        /* Animasi Mengapung */
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-            100% { transform: translateY(0px); }
-        }
-
-        .floating {
-            animation: float 4s ease-in-out infinite;
+        .social-link {
+            color: var(--accent-pink);
+            text-decoration: none;
+            font-weight: bold;
         }
     </style>
 </head>
 <body>
 
-    <div class="cv-card floating">
+    <div class="container">
         <header>
-            <h1>Ariel Oceanita</h1>
-            <p class="subtitle">Creative UI Designer & Dreamer</p>
+            <!-- Ganti URL di src dengan foto kamu -->
+            <img src="Gemini_Generated_Image_z0tltoz0tltoz0tl.png" alt="Foto Zhalika Fatharani" class="profile-img">
+            <h1>Zhalika Fatharani</h1>
+            <p class="tagline">Lulusan SMA Jurusan IPS</p>
         </header>
 
-        <section>
-            <h3 class="section-title">Tentang Saya</h3>
-            <p>Seorang desainer yang terinspirasi oleh keindahan bawah laut. Ahli dalam menciptakan antarmuka yang mengalir (fluid) dan pengalaman pengguna yang menenangkan seperti ombak tenang.</p>
-        </section>
+        <div class="content">
+            <!-- Kolom Kiri -->
+            <aside class="sidebar">
+                <h3>Kontak & Info</h3>
+                <ul class="info-list">
+                    <li>📍 Kp. Bandung</li>
+                    <li>📞 08965437654</li>
+                    <li>🎂 20 Januari 2007</li>
+                    <li>📱 Instagram: <a href="#" class="social-link">@zhalika</a></li>
+                </ul>
 
-        <section>
-            <h3 class="section-title">Pengalaman Kerja</h3>
-            <ul>
-                <li><strong>Lead Designer</strong> di Atlantis Studio (2022 - Sekarang)</li>
-                <li><strong>Junior Illustrator</strong> di Coral Reef Agency (2020 - 2022)</li>
-            </ul>
-        </section>
+                <h3>Bahasa</h3>
+                <ul class="info-list">
+                    <li>🇮🇩 Bahasa Indonesia</li>
+                    <li>🇬🇧 Bahasa Inggris (Basic)</li>
+                </ul>
 
-        <section>
-            <h3 class="section-title">Keahlian</h3>
-            <div class="skills-container">
-                <span class="skill-badge">Adobe XD</span>
-                <span class="skill-badge">Figma</span>
-                <span class="skill-badge">CSS Magic</span>
-                <span class="skill-badge">Storytelling</span>
-                <span class="skill-badge">Visual Art</span>
-            </div>
-        </section>
+                <h3>Hobby</h3>
+                <span class="hobby-tag">🛍️ Scroll Marketplace</span>
+            </aside>
 
-        <section>
-            <h3 class="section-title">Kontak</h3>
-            <p>📧 hello@mermaid-waves.com<br>
-               📍 Underwater Kingdom, Coral Sector 7</p>
-        </section>
+            <!-- Kolom Kanan -->
+            <main class="main-content">
+                <section>
+                    <h3>Tentang Saya</h3>
+                    <p>Saya adalah siswi lulusan SMA jurusan IPS yang memiliki semangat tinggi dan siap bekerja secara profesional dalam bidang yang saya minati. Saya dikenal sebagai pribadi yang tekun dan mudah beradaptasi.</p>
+                </section>
+
+                <section>
+                    <h3>Pendidikan</h3>
+                    <div class="bubble-item">
+                        <strong>SD</strong> (2015)<br>
+                        <strong>SMP</strong> (2021)<br>
+                        <strong>SMA Jurusan IPS</strong> (2025)
+                    </div>
+                </section>
+
+                <section>
+                    <h3>Pengalaman Organisasi</h3>
+                    <div class="bubble-item">
+                        <strong>Ketua Kelompok</strong>
+                        <p style="margin:5px 0 0 0; font-size: 0.9rem;">Memimpin tim dalam ujian tes performa sekolah dan memastikan koordinasi berjalan lancar.</p>
+                    </div>
+                </section>
+
+                <section>
+                    <h3>Keahlian & Sertifikat</h3>
+                    <div class="skills-container" style="margin-bottom: 15px;">
+                        <span class="skill-badge">Bekerja dalam Tim</span>
+                        <span class="skill-badge">Leadership</span>
+                    </div>
+                    <div class="bubble-item" style="border-left-color: var(--accent-pink);">
+                        🏆 <strong>Sertifikat: Ketua Tergacor</strong>
+                    </div>
+                </section>
+            </main>
+        </div>
 
         <footer>
-            Dibuat dengan ✨ dan deburan ombak
+            &copy; 2025 Zhalika Fatharani - Dibuat dengan cinta & warna pastel
         </footer>
     </div>
 
